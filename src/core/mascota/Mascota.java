@@ -56,4 +56,9 @@ public abstract class Mascota {
     public void addTratamiento(Tratamiento tratamiento){
         tratamientos.add(tratamiento);
     }
+
+    public String getEspecie() {
+        return especie;
+    }
+    
 }

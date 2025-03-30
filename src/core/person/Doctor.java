@@ -10,4 +10,10 @@ public class Doctor extends Persona{
     public Doctor(String nombre) {
         super(nombre);
     }
+
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
+    
+    
 }
