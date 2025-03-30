@@ -32,15 +32,53 @@ public class Main {
         vet.addMascota(new Gato("Oliva","naranja",1, 0.40f,2,new Dueño("Mateo")));
         vet.addMascota(new Gato("Trueno","naranja",1, 0.40f,2,new Dueño("Mateo")));
         vet.addMascota(new Gato("Flipi","naranja",1, 0.40f,2,new Dueño("Mateo")));
-        vet.addMascota(new Gato("Krippi","naranja",1, 0.40f,2,new Dueño("Mateo")));
-        vet.addMascota(new Gato("Keko","naranja",1, 0.40f,2,new Dueño("Mateo")));
+        vet.addMascota(new Loro("Krippi","naranja",1, 0.40f,2,new Dueño("Mateo")));
+        vet.addMascota(new Perro("Keko","naranja",1, 0.40f,2,new Dueño("Mateo")));
         vet.addMascota(new Gato("Tierro","naranja",1, 0.40f,2,new Dueño("Mateo")));
         
-        Tratamiento trat1 = new ChequeoGeneral(today,vet.getDoctor(0),vet.getMascota(0));
-        Tratamiento trat2 = new ChequeoGeneral(today,vet.getDoctor(0),vet.getMascota(0));
-        Tratamiento trat3 = new ChequeoGeneral(today,vet.getDoctor(0),vet.getMascota(0));
+        listTrat.add(new ChequeoGeneral(today));
+        listTrat.add(new Desparacitacion(today));
+        listTrat.add(new Vacunacion(today));
+        listTrat.add(new Vacunacion(today));
+        listTrat.add(new Cirugia(today));
+        listTrat.add(new Cirugia(today));
+        listTrat.add(new Cirugia(today));
         
-        System.out.println(vet.docMaxGatosTratamiento(new Vacunacion(today)).getNombre());
         
+        vet.getMascota(0).addTratamiento(listTrat.get(0));
+        vet.getMascota(1).addTratamiento(listTrat.get(1));
+        vet.getMascota(2).addTratamiento(listTrat.get(2));
+        vet.getMascota(3).addTratamiento(listTrat.get(3));
+        vet.getMascota(4).addTratamiento(listTrat.get(4));
+        vet.getMascota(5).addTratamiento(listTrat.get(5));
+        vet.getMascota(6).addTratamiento(listTrat.get(6));
+        
+        vet.getDoctor(0).addTratamiento(listTrat.get(0));
+        vet.getDoctor(0).addTratamiento(listTrat.get(1));
+        vet.getDoctor(1).addTratamiento(listTrat.get(2));
+        vet.getDoctor(1).addTratamiento(listTrat.get(3));
+        vet.getDoctor(2).addTratamiento(listTrat.get(4));
+        vet.getDoctor(2).addTratamiento(listTrat.get(5));
+        vet.getDoctor(3).addTratamiento(listTrat.get(5));
+        vet.getDoctor(3).addTratamiento(listTrat.get(6));
+        
+        
+        System.out.println(vet.docMaxGatosTratamiento(new Cirugia(today)).getNombre());
+        
+        /* 
+        
+        Eduardo :   Chequeo - Gato
+                    Desparacitacion - Gato
+                    
+        Camilo :    Vacuna - Gato
+                    Vacuna - Gato
+        
+        Gerardo :   Cirugia - Loro
+                    Cirugia - Perro
+        
+        Luis :      Cirugia - Gato
+                    Vacuna - Gato
+        
+         */ 
     }
 }

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author User
  */
 public class Cirugia extends Tratamiento{
-    public Cirugia(LocalDateTime fecha,Doctor doctor, Mascota mascota){
-        super(fecha,doctor,mascota);
+    public Cirugia(LocalDateTime fecha){
+        super(fecha);
     }
 }

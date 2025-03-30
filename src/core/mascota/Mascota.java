@@ -53,8 +53,11 @@ public abstract class Mascota {
         return dueño;
     }
     
-    public void addTratamiento(Tratamiento tratamiento){
-        tratamientos.add(tratamiento);
+    public void addTratamiento(Tratamiento tratamiento) {
+        if (!tratamientos.contains(tratamiento)) {
+            tratamientos.add(tratamiento);
+            tratamiento.addMascota(this); // Se mantiene la bidireccionalidad
+        }
     }
 
     public String getEspecie() {

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author User
  */
 public class ChequeoGeneral extends Tratamiento{
-    public ChequeoGeneral(LocalDateTime fecha,Doctor doctor, Mascota mascota){
-        super(fecha,doctor,mascota);
+    public ChequeoGeneral(LocalDateTime fecha){
+        super(fecha);
     }
 }

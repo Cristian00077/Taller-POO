@@ -38,10 +38,7 @@ public class PetHealth {
             ArrayList<Tratamiento> tratamientosDoc = doctor.getTratamientos();
             for (Tratamiento tratamientoDoc : tratamientosDoc) {
                 if (tratamientoDoc.getClass().equals(tratamientoBusqueda.getClass())) {
-                    System.out.println(doctor.getNombre());
-                    System.out.println(tratamientoDoc.getClass());
                     ArrayList<Mascota> mascotasTrat = tratamientoDoc.getMascotas();
-                    System.out.println(mascotasTrat);
                     for (Mascota mascotaTrat : mascotasTrat) {
                         if (mascotaTrat.getEspecie().equals("Gato")) {
                             tratamientoCumple++;
@@ -51,10 +48,10 @@ public class PetHealth {
             }
             if (tratamientoCumple > maxTratCumple) {
                 indexDocMax = indexDoc;
+                maxTratCumple = tratamientoCumple;
             }
             indexDoc++;
         }
-
         return this.doctores.get(indexDocMax);
     }
 }

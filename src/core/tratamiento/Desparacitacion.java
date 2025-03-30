@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author User
  */
 public class Desparacitacion extends Tratamiento{
-    public Desparacitacion(LocalDateTime fecha,Doctor doctor, Mascota mascota){
-        super(fecha,doctor,mascota);
+    public Desparacitacion(LocalDateTime fecha){
+        super(fecha);
     }
 }

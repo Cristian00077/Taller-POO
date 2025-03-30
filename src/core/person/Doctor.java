@@ -15,8 +15,11 @@ public class Doctor extends Persona{
         return tratamientos;
     }
     
-    public void addTratamiento(Tratamiento tratamiento){
-        tratamientos.add(tratamiento);
+    public void addTratamiento(Tratamiento tratamiento) {
+        if (!tratamientos.contains(tratamiento)) {
+            tratamientos.add(tratamiento);
+            tratamiento.addDoctor(this);
+        }
     }
 
     public String getNombre() {

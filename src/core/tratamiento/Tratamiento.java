@@ -1,4 +1,3 @@
-
 package core.tratamiento;
 
 import core.mascota.Mascota;
@@ -7,17 +6,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public abstract class Tratamiento {
+
     protected ArrayList<Doctor> doctores = new ArrayList<>();
     protected ArrayList<Mascota> mascotas = new ArrayList<>();
     protected LocalDateTime fecha;
 
-    public Tratamiento(LocalDateTime fecha,Doctor doctor,Mascota mascota) {
+    public Tratamiento(LocalDateTime fecha) {
         this.fecha = fecha;
-        this.doctores.add(doctor);
-        this.mascotas.add(mascota);
-        
-        mascota.addTratamiento(this);
-        doctor.addTratamiento(this);
+    }
+    public Tratamiento(){
     }
 
     public ArrayList<Doctor> getDoctores() {
@@ -27,5 +24,26 @@ public abstract class Tratamiento {
     public ArrayList<Mascota> getMascotas() {
         return mascotas;
     }
-    
+
+    public void setDoctores(ArrayList<Doctor> doctores) {
+        this.doctores = doctores;
+    }
+
+    public void setMascotas(ArrayList<Mascota> mascotas) {
+        this.mascotas = mascotas;
+    }
+
+    public void addDoctor(Doctor doctor) {
+        if (!doctores.contains(doctor)) {
+            doctores.add(doctor);
+            doctor.addTratamiento(this);
+        }
+    }
+
+    public void addMascota(Mascota mascota) {
+        if (!mascotas.contains(mascota)) {
+            mascotas.add(mascota);
+            mascota.addTratamiento(this);
+        }
+    }
 }

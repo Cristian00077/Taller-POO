@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * @author User
  */
 public class Vacunacion extends Tratamiento{
-    public Vacunacion(LocalDateTime fecha,Doctor doctor, Mascota mascota){
-        super(fecha,doctor,mascota);
+    public Vacunacion(LocalDateTime fecha){
+        super(fecha);
     }
 }
