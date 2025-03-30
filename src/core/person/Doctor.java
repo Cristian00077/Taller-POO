@@ -15,5 +15,7 @@ public class Doctor extends Persona{
         return mascotas;
     }
     
-    
+    public void addMascota(Mascota mascota){
+        this.mascotas.add(mascota);
+    }
 }

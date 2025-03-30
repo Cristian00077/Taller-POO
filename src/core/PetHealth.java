@@ -3,6 +3,7 @@ package core;
 
 import core.mascota.Mascota;
 import core.person.Doctor;
+import core.tratamiento.Tratamiento;
 import java.util.*;
 
 public class PetHealth {
@@ -17,7 +18,7 @@ public class PetHealth {
     public void addMascota(Mascota mascota){
         this.mascotas.add(mascota);
     }
-    public Doctor docMaxGatosEsp(String raza){
+    public Doctor docMaxGatosTratamiento(Tratamiento tratamientoBusqueda){
         int maxGatoCumple = -1;
         int indexDocMax = 0;
         int indexDoc = 0;
@@ -27,8 +28,12 @@ public class PetHealth {
             for (Mascota mascota : animalesDoc) {
                 
                 if(mascota.getEspecie().equals("Gato")){
-                    if(mascota.getRaza().equals(raza)){
-                        gatoCumple++;
+                    
+                    ArrayList<Tratamiento> tratamientosGato = mascota.getTratamientos();
+                    for (Tratamiento tratamiento : tratamientosGato) {
+                        if(tratamiento.equals(tratamientoBusqueda)){
+                            gatoCumple++;
+                        }
                     }
                 }
             }
