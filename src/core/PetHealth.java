@@ -9,10 +9,10 @@ public class PetHealth {
 
     private ArrayList<Doctor> doctores = new ArrayList<>();
     private ArrayList<Mascota> mascotas = new ArrayList<>();
-
+    
     public PetHealth() {
     }
-
+    
     public void addDoctor(Doctor doctor) {
         this.doctores.add(doctor);
     }
@@ -21,6 +21,14 @@ public class PetHealth {
         this.mascotas.add(mascota);
     }
 
+    public Doctor getDoctor(int i) {
+        return doctores.get(i);
+    }
+
+    public Mascota getMascota(int i) {
+        return mascotas.get(i);
+    }
+    
     public Doctor docMaxGatosTratamiento(Tratamiento tratamientoBusqueda) {
         int maxTratCumple = -1;
         int indexDocMax = 0;
@@ -29,8 +37,11 @@ public class PetHealth {
             int tratamientoCumple = 0;
             ArrayList<Tratamiento> tratamientosDoc = doctor.getTratamientos();
             for (Tratamiento tratamientoDoc : tratamientosDoc) {
-                if (tratamientoDoc.equals(tratamientoBusqueda)) {
+                if (tratamientoDoc.getClass().equals(tratamientoBusqueda.getClass())) {
+                    System.out.println(doctor.getNombre());
+                    System.out.println(tratamientoDoc.getClass());
                     ArrayList<Mascota> mascotasTrat = tratamientoDoc.getMascotas();
+                    System.out.println(mascotasTrat);
                     for (Mascota mascotaTrat : mascotasTrat) {
                         if (mascotaTrat.getEspecie().equals("Gato")) {
                             tratamientoCumple++;

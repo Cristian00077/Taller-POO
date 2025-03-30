@@ -14,4 +14,13 @@ public class Doctor extends Persona{
     public ArrayList<Tratamiento> getTratamientos() {
         return tratamientos;
     }
+    
+    public void addTratamiento(Tratamiento tratamiento){
+        tratamientos.add(tratamiento);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
 }

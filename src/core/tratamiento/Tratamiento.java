@@ -11,8 +11,13 @@ public abstract class Tratamiento {
     protected ArrayList<Mascota> mascotas = new ArrayList<>();
     protected LocalDateTime fecha;
 
-    public Tratamiento(LocalDateTime fecha) {
+    public Tratamiento(LocalDateTime fecha,Doctor doctor,Mascota mascota) {
         this.fecha = fecha;
+        this.doctores.add(doctor);
+        this.mascotas.add(mascota);
+        
+        mascota.addTratamiento(this);
+        doctor.addTratamiento(this);
     }
 
     public ArrayList<Doctor> getDoctores() {
