@@ -14,4 +14,7 @@ public class Desparacitacion extends Tratamiento{
     public Desparacitacion(LocalDateTime fecha){
         super(fecha);
     }
+    public Desparacitacion(){
+        super();
+    }
 }

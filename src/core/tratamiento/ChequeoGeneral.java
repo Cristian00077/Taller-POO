@@ -14,4 +14,7 @@ public class ChequeoGeneral extends Tratamiento{
     public ChequeoGeneral(LocalDateTime fecha){
         super(fecha);
     }
+    public ChequeoGeneral(){
+        super();
+    }
 }

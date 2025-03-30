@@ -18,8 +18,6 @@ public class Main {
 
         PetHealth vet = new PetHealth();
         
-        ArrayList<Doctor> listDoc = new ArrayList<>();
-        ArrayList<Mascota> listMasc = new ArrayList<>();
         ArrayList<Tratamiento> listTrat = new ArrayList<>();
         LocalDateTime today = LocalDateTime.now();
         

@@ -14,4 +14,7 @@ public class Vacunacion extends Tratamiento{
     public Vacunacion(LocalDateTime fecha){
         super(fecha);
     }
+    public Vacunacion(){
+        super();
+    }
 }

@@ -14,4 +14,7 @@ public class Cirugia extends Tratamiento{
     public Cirugia(LocalDateTime fecha){
         super(fecha);
     }
+    public Cirugia(){
+        super();
+    }
 }
