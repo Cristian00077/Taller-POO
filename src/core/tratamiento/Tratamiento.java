@@ -14,4 +14,13 @@ public abstract class Tratamiento {
     public Tratamiento(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+
+    public ArrayList<Doctor> getDoctores() {
+        return doctores;
+    }
+
+    public ArrayList<Mascota> getMascotas() {
+        return mascotas;
+    }
+    
 }
